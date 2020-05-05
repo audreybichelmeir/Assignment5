@@ -9,8 +9,8 @@ class BST
         //virtual ~BST() - when working with template classes
 
         void insert(T value); //which in this example is also our key
-        TreeNode<T>* search(T value); //which in this example is also our key
-        bool deleteNode(T k);
+        bool search(int value); //which in this example is also our key
+        bool deleteNode(int k);
 
         bool isEmpty();
         TreeNode<T>* getMin();
@@ -123,7 +123,7 @@ bool BST<T>::search(int value)
     else
     {
         //tree is not empty
-        TreeNode *current = root;
+        TreeNode<T> *current = root;
 
         while(current->key != value)
         {
@@ -145,139 +145,141 @@ bool BST<T>::search(int value)
     return true;
 }
 
-//bool BST::deleteNode(int k)
-// {
-//     if(isEmpty())
-//     {
-//         return false;
-//     }
-//     else if(!search(k))
-//     {
-//         return false;
-//     }
-//
-//     //tree is not empty and value exists
-//     TreeNode *current = root;
-//     TreeNode *parent = root;
-//     bool isLeft = true;
-//
-//     //usual code to find TreeNode
-//     //we will also update pointers
-//     while(current->key != k)
-//     {
-//         parent = current;
-//         if(k < current->key)
-//         {
-//             isLeft = true;
-//             current = current->left;
-//         }
-//         else
-//         {
-//             isLeft = false;
-//             current = current->right;
-//         }
-//
-//         if(current == NULL)
-//         {
-//             return false;
-//         }
-//
-//         //if we made here, then we've found the node now let's proceed to deleteNode
-//
-//         //no children, leaf TreeNode
-//         if(current->left == NULL && current->right == NULL)
-//         {
-//             if(current == root)
-//             {
-//                 root = NULL;
-//             }
-//             else if(isLeft)
-//             {
-//                 parent->left = NULL;
-//             }
-//             else
-//             {
-//                 parent->right = NULL;
-//             }
-//         }
-//         //one child and the child is isLeft
-//         else if(current->right == NULL)
-//         {
-//             //does not have a right child
-//             if(current == root)
-//             {
-//                 root = current->left;
-//             }
-//             else if(isLeft)
-//             {
-//                 parent->left = current->left;
-//             }
-//             else
-//             {
-//                 parent->right = current->right;
-//             }
-//         }
-//         else if(current->left == NULL)
-//         {
-//             //does not have a right child
-//             if(current == root)
-//             {
-//                 root = current->right;
-//             }
-//             else if(isLeft)
-//             {
-//                 parent->left = current->right;
-//             }
-//             else
-//             {
-//                 parent->right = current->right;
-//             }
-//         }
-//         else
-//         {
-//             //the node has 2 children
-//             TreeNode *successor = getSuccessor(current);
-//
-//             if(current == root)
-//             {
-//                 root = successor;
-//             }
-//             else if(isLeft)
-//             {
-//                 parent->left = successor;
-//             }
-//             else
-//             {
-//                 parent->right = successor;
-//             }
-//
-//             successor->left = current->left;
-//
-//             return true;
-//         }
-//     }
-// }
-//
-// TreeNode* BST::getSuccessor(TreeNode *d)
-// {
-//     //d is the node to be deleteNode
-//
-//     TreeNode *sp = d;
-//     TreeNode *successor = d;
-//     TreeNode *current = d->right;
-//
-//     while(current != NULL)
-//     {
-//         sp = successor;
-//         successor = current;
-//         current = current->left;
-//     }
-//
-//     if(successor != d->right)
-//     {
-//         sp->left = successor->right;
-//         successor->right = d->right;
-//     }
-//
-//     return successor;
-// }
+template <class T>
+bool BST<T>::deleteNode(int k)
+{
+    if(isEmpty())
+    {
+        return false;
+    }
+    else if(!search(k))
+    {
+        return false;
+    }
+
+    //tree is not empty and value exists
+    TreeNode<T> *current = root;
+    TreeNode<T> *parent = root;
+    bool isLeft = true;
+
+    //usual code to find TreeNode
+    //we will also update pointers
+    while(current->key != k)
+    {
+        parent = current;
+        if(k < current->key)
+        {
+            isLeft = true;
+            current = current->left;
+        }
+        else
+        {
+            isLeft = false;
+            current = current->right;
+        }
+
+        if(current == NULL)
+        {
+            return false;
+        }
+
+        //if we made here, then we've found the node now let's proceed to deleteNode
+
+        //no children, leaf TreeNode
+        if(current->left == NULL && current->right == NULL)
+        {
+            if(current == root)
+            {
+                root = NULL;
+            }
+            else if(isLeft)
+            {
+                parent->left = NULL;
+            }
+            else
+            {
+                parent->right = NULL;
+            }
+        }
+        //one child and the child is isLeft
+        else if(current->right == NULL)
+        {
+            //does not have a right child
+            if(current == root)
+            {
+                root = current->left;
+            }
+            else if(isLeft)
+            {
+                parent->left = current->left;
+            }
+            else
+            {
+                parent->right = current->right;
+            }
+        }
+        else if(current->left == NULL)
+        {
+            //does not have a right child
+            if(current == root)
+            {
+                root = current->right;
+            }
+            else if(isLeft)
+            {
+                parent->left = current->right;
+            }
+            else
+            {
+                parent->right = current->right;
+            }
+        }
+        else
+        {
+            //the node has 2 children
+            TreeNode<T> *successor = getSuccessor(current);
+
+            if(current == root)
+            {
+                root = successor;
+            }
+            else if(isLeft)
+            {
+                parent->left = successor;
+            }
+            else
+            {
+                parent->right = successor;
+            }
+
+            successor->left = current->left;
+
+            return true;
+        }
+    }
+}
+
+template <class T>
+TreeNode<T>* BST<T>::getSuccessor(TreeNode<T>* d)
+{
+    //d is the node to be deleteNode
+
+    TreeNode<T> *sp = d;
+    TreeNode<T> *successor = d;
+    TreeNode<T> *current = d->right;
+
+    while(current != NULL)
+    {
+        sp = successor;
+        successor = current;
+        current = current->left;
+    }
+
+    if(successor != d->right)
+    {
+        sp->left = successor->right;
+        successor->right = d->right;
+    }
+
+    return successor;
+}
