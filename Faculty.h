@@ -5,7 +5,6 @@ class Faculty{
 public:
   Faculty();
   ~Faculty();
-
   string getDepartment(string department);
   void setDepartment();
 
