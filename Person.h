@@ -6,6 +6,7 @@ class Person{
 
 public:
   Person();
+  Person(string name, string level, int id);
   ~Person();
 
   string getName(string name);

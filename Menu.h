@@ -3,6 +3,10 @@
 #include <string>
 #include <cstdlib>
 
+#include "Person.h"
+#include "Student.h"
+#include "Faculty.h"
+
 using namespace std;
 
 
@@ -13,6 +17,7 @@ public:
   ~Menu();
   void MenuPrint();
   void MenuError();
+  Person p2;
 
 private:
   bool validAnswer;

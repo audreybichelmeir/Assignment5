@@ -7,6 +7,10 @@ Person::Person(){
   id = 0;
 }
 
+Person::Person(string name, string level, int id){
+
+}
+
 Person::~Person(){
 
 }

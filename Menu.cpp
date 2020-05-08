@@ -88,6 +88,7 @@ void Menu::MenuPrint(){
     cin >> level;
     cout << "ID: " << endl;
     cin >> id; // need an if statement if they give a letter
+    p2.Person(name, level, id);
     cout << "Department: " << endl;
     cin >> department;
     //cout << "Name: " << name << " Level: " << level << " ID: " << id << " Department: " << department << endl;
