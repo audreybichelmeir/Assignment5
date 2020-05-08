@@ -17,5 +17,9 @@ public:
 private:
   bool validAnswer;
   int input;
+  string name;
+  string level;
+  int id;
+  string department;
 
 };

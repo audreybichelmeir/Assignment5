@@ -1,8 +1,15 @@
 #include "Menu.h"
 
 Menu::Menu(){
-  bool validAnswer = false;
+  bool validAnswer = true;
   int input = 0;
+
+  name = " ";
+  level = " ";
+  id = 0;
+  department = " ";
+
+
   MenuPrint();
 
 }
@@ -35,99 +42,81 @@ void Menu::MenuPrint(){
   cout << "13. Rollback" << endl;
   cout << "14. Exit" << endl;
 
-  while (validAnswer == false) {
+  while (validAnswer) {
 
     cin >> input;
 
     switch (input) {
     case 1 :
     cout << "Print all students and their information (sorted by ascending id #)" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 2:
     cout << "Print all faculty and their information (sorted by ascending id #)" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 3:
     cout << "Find and display student information given the students id" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 4:
     cout << "Find and display faculty information given the faculty id" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 5:
     cout << "Given a student’s id, print the name and info of their faculty advisor" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 6:
     cout << "Given a faculty id, print ALL the names and info of his/her advisees" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 7:
     cout << "Add a new student" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
 
     case 8 :
     cout << "Delete a student given the id" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 9 :
     cout << "Add a new faculty member" << endl;
-    cout << endl;
-    validAnswer = true;
+    cout << "Name: " << endl;
+    cin >> name;
+    cout << "Level: " << endl;
+    cin >> level;
+    cout << "ID: " << endl;
+    cin >> id; // need an if statement if they give a letter
+    cout << "Department: " << endl;
+    cin >> department;
+    //cout << "Name: " << name << " Level: " << level << " ID: " << id << " Department: " << department << endl;
+
     break;
 
     case 10 :
     cout << "Delete a faculty member given the id" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 11 :
     cout << "Change a student’s advisor given the student id and the new faculty id" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 12 :
     cout << "Remove an advisee from a faculty member given the ids" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 13 :
     cout << "Rollback" << endl;
-    cout << endl;
-    validAnswer = true;
     break;
 
     case 14 :
     cout << "Exit" << endl;
-    cout << endl;
-    validAnswer = true;
+    validAnswer = false;
     break;
 
     default :
     MenuError();
-    validAnswer = false;
     // cout << "Invalid input" << endl;
     // cout << "Please enter a number between 1 and 14" << endl;
     // cin >> input;
