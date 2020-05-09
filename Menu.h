@@ -17,7 +17,7 @@ public:
   ~Menu();
   void MenuPrint();
   void MenuError();
-  Person p2;
+  Person *p2;
 
 private:
   bool validAnswer;

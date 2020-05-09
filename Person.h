@@ -1,4 +1,5 @@
 #include <iostream>
+#pragma once
 
 using namespace std;
 
@@ -19,8 +20,8 @@ public:
   void setID();
 
 private:
-  string name;
-  string level;
-  int id;
+  string name1;
+  string level1;
+  int id1;
 
 };

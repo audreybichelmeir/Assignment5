@@ -2,13 +2,13 @@
 
 Person::Person(){
 
-  name = " ";
-  level = " ";
-  id = 0;
+  name1 = " ";
+  level1 = " ";
+  id1 = 0;
 }
 
 Person::Person(string name, string level, int id){
-
+cout << "U werk it" << endl;
 }
 
 Person::~Person(){
