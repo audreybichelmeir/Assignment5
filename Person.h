@@ -1,5 +1,8 @@
 #include <iostream>
 #pragma once
+/*
+https://stackoverflow.com/questions/3746484/why-am-i-getting-this-redefinition-of-class-error
+*/
 
 using namespace std;
 
