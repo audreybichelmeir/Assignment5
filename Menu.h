@@ -18,13 +18,23 @@ public:
   void MenuPrint();
   void MenuError();
   Person *p2;
+  Faculty *f;
 
 private:
   bool validAnswer;
   int input;
+
+  //student & faculty
   string name;
   string level;
   int id;
+
+  //student
+  string major;
+  double gpa;
+  int advisor;
+
+  //faculty
   string department;
 
 };

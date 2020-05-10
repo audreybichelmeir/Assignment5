@@ -4,6 +4,7 @@ class Faculty{
 
 public:
   Faculty();
+  Faculty(string department);
   ~Faculty();
   string getDepartment(string department);
   void setDepartment();

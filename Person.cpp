@@ -8,7 +8,8 @@ Person::Person(){
 }
 
 Person::Person(string name, string level, int id){
-cout << "U werk it" << endl;
+
+cout << "works" << endl;
 }
 
 Person::~Person(){

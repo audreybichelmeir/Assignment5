@@ -73,6 +73,22 @@ void Menu::MenuPrint(){
 
     case 7:
     cout << "Add a new student" << endl;
+
+    cout << "Name: " << endl;
+    cin >> name;
+    cout << "Level: " << endl;
+    cin >> level;
+    cout << "ID: " << endl;
+    cin >> id; // need an if statement if they give a letter
+    cout << "Major: " << endl;
+    cin >> major;
+    cout << "GPA: " << endl;
+    cin >> gpa;
+    cout << "Advisor (type ID): " << endl;
+    cin >> advisor;
+
+    Person(name, level, id);
+
     break;
 
 
@@ -88,11 +104,12 @@ void Menu::MenuPrint(){
     cin >> level;
     cout << "ID: " << endl;
     cin >> id; // need an if statement if they give a letter
+    Person(name, level, id);
+
     cout << "Department: " << endl;
     cin >> department;
-    Person(name, level, id);
     //cout << "Name: " << name << " Level: " << level << " ID: " << id << " Department: " << department << endl;
-
+    //Faculty(department);
     break;
 
     case 10 :

@@ -27,9 +27,9 @@ public:
   void setAdvisor();
 
 private:
-  string name;
-  string level;
-  int id;
+  //string name;
+  //string level;
+  //int id;
 
   string major;
   double gpa;
