@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include "Faculty.h"
 
 Menu::Menu(){
   bool validAnswer = true;
@@ -17,6 +18,91 @@ Menu::Menu(){
 Menu::~Menu(){
 
 }
+
+void Menu::FileReaderStudents(){
+
+}
+
+void Menu::FileReaderFaculty(){
+
+}
+
+void Menu::PrintAllStudents(){
+
+}
+
+void Menu::PrintAllFaculty(){
+
+}
+
+void Menu::FindStudentGivenID(){
+
+}
+
+void Menu::FindFacultyGivenID(){
+
+}
+
+void Menu::AddStudent(){
+  cout << "Name: " << endl;
+  cin >> name;
+  cout << "Level: " << endl;
+  cin >> level;
+  cout << "ID: " << endl;
+  cin >> id; // need an if statement if they give a letter
+  cout << "Major: " << endl;
+  cin >> major;
+  cout << "GPA: " << endl;
+  cin >> gpa;
+  cout << "Advisor (type ID): " << endl;
+  cin >> advisor;
+
+}
+
+void Menu::AddFaculty(){
+  cout << "Name: " << endl;
+  cin >> name;
+  cout << "Level: " << endl;
+  cin >> level;
+  cout << "ID: " << endl;
+  cin >> id; // need an if statement if they give a letter
+  cout << "Department: " << endl;
+  cin >> department;
+
+  Faculty *f1 = new Faculty();
+  Faculty(name, level, id, department);
+  delete f1;
+
+}
+
+void Menu::StudentIDFindAdvisor(){
+
+}
+
+void Menu::FacultyIDFindAdvisees(){
+
+}
+
+void Menu::DeleteStudentGivenID(){
+
+}
+
+void Menu::DeleteFacultyGivenID(){
+
+}
+
+void Menu::ChangeAdvisorGivenID(){
+
+}
+
+void Menu::RemoveAdviseeGivenID(){
+
+}
+
+void Menu::RollBack(){
+
+}
+
 
 void Menu::MenuError(){
   cout << "Invalid input" << endl;
@@ -73,22 +159,7 @@ void Menu::MenuPrint(){
 
     case 7:
     cout << "Add a new student" << endl;
-
-    cout << "Name: " << endl;
-    cin >> name;
-    cout << "Level: " << endl;
-    cin >> level;
-    cout << "ID: " << endl;
-    cin >> id; // need an if statement if they give a letter
-    cout << "Major: " << endl;
-    cin >> major;
-    cout << "GPA: " << endl;
-    cin >> gpa;
-    cout << "Advisor (type ID): " << endl;
-    cin >> advisor;
-
-    Person(name, level, id);
-
+    AddStudent();
     break;
 
 
@@ -98,18 +169,7 @@ void Menu::MenuPrint(){
 
     case 9 :
     cout << "Add a new faculty member" << endl;
-    cout << "Name: " << endl;
-    cin >> name;
-    cout << "Level: " << endl;
-    cin >> level;
-    cout << "ID: " << endl;
-    cin >> id; // need an if statement if they give a letter
-    Person(name, level, id);
-
-    cout << "Department: " << endl;
-    cin >> department;
-    //cout << "Name: " << name << " Level: " << level << " ID: " << id << " Department: " << department << endl;
-    //Faculty(department);
+    AddFaculty();
     break;
 
     case 10 :
@@ -135,11 +195,6 @@ void Menu::MenuPrint(){
 
     default :
     MenuError();
-    // cout << "Invalid input" << endl;
-    // cout << "Please enter a number between 1 and 14" << endl;
-    // cin >> input;
-    // cout << endl;
-    // //continue;
     break;
     }
   }

@@ -3,10 +3,6 @@
 #include <string>
 #include <cstdlib>
 
-#include "Person.h"
-#include "Student.h"
-#include "Faculty.h"
-
 using namespace std;
 
 
@@ -15,10 +11,33 @@ class Menu{
 public:
   Menu();
   ~Menu();
+
   void MenuPrint();
   void MenuError();
-  Person *p2;
-  Faculty *f;
+
+  void FileReaderStudents(); //general
+  void FileReaderFaculty(); //general
+
+  void PrintAllStudents(); //case 1
+  void PrintAllFaculty(); // case 2
+
+  void FindStudentGivenID(); //case 3
+  void FindFacultyGivenID(); //case 4
+
+  void AddStudent(); // case 7
+  void AddFaculty(); //case 9
+
+  void StudentIDFindAdvisor(); //case 5
+  void FacultyIDFindAdvisees(); //case 6
+
+  void DeleteStudentGivenID(); // case 8
+  void DeleteFacultyGivenID(); // case 10
+
+  void ChangeAdvisorGivenID(); //case 11
+  void RemoveAdviseeGivenID(); //case 12
+
+  void RollBack(); // case 13
+
 
 private:
   bool validAnswer;
