@@ -12,18 +12,18 @@ public:
   Faculty(string name, string level, int id, string department);
   ~Faculty();
 
-  string getName(string name);
-  void setName();
+  string getName();
+  void setName(string department);
 
-  string getLevel(string level);
-  void setLevel();
+  string getLevel();
+  void setLevel(string level);
 
-  int getID(int id);
-  void setID();
+  int getID();
+  void setID(int id);
 
 
-  string getDepartment(string department);
-  void setDepartment();
+  string getDepartment();
+  void setDepartment(string department);
 
   void ListAdviseeIds();
 
@@ -31,6 +31,6 @@ private:
   string name1;
   string level1;
   int id1;
-  string dep1;
+  string department1;
   //genlinkedlist of advisee list
 };

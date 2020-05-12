@@ -6,12 +6,12 @@ Faculty::Faculty(){
   name1 = " ";
   level1 = " ";
   id1 = 0;
-  dep1 = " ";
+  department1 = " ";
 }
 
 Faculty::Faculty(string name, string level, int id, string department){
 
-  cout << "Name: " << name << " Level: " << level << " ID: " << id << " Department: " << department << endl;
+  cout << "Name: " << name1 << " Level: " << level1 << " ID: " << id1 << " Department: " << department << endl;
   Menu *m1 = new Menu();
   m1->MenuPrint();
   delete m1;
@@ -22,35 +22,54 @@ Faculty::~Faculty(){
 
 }
 
-string Faculty::getName(string name){
+string Faculty::getName(){
+
+//name1 = name;
+return name1;
 
 }
 
-void Faculty::setName(){
+void Faculty::setName(string name){
+name = name1;
+//return name1;
+}
+
+string Faculty::getLevel(){
+
+  //level1 = level;
+  return level1;
 
 }
 
-string Faculty::getLevel(string level){
+void Faculty::setLevel(string level){
+
+  level1 = level;
+  //return level1;
+}
+
+int Faculty::getID(){
+
+//id1 = id;
+return id1;
+}
+
+void Faculty::setID(int id){
+  id1 = id;
+  //return id1;
 
 }
 
-void Faculty::setLevel(){
+
+string Faculty::getDepartment(){
+
+//dep1 = department;
+return department1;
 
 }
 
-int Faculty::getID(int id){
+void Faculty::setDepartment(string department){
 
-}
-
-void Faculty::setID(){
-
-}
-
-
-string Faculty::getDepartment(string department){
-
-}
-
-void Faculty::setDepartment(){
+  department1 = department;
+//return dep1;
 
 }
