@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -6,33 +9,34 @@ class Student{
 
 public:
   Student();
+  Student(string name, string level, int id, string major, double gpa, int advisor);
   ~Student();
 
-  string getName(string name);
-  void setName();
+  string getName();
+  void setName(string name);
 
-  string getLevel(string level);
-  void setLevel();
+  string getLevel();
+  void setLevel(string level);
 
-  int getID(int id);
-  void setID();
+  int getID();
+  void setID(int id);
 
-  string getMajor(string major);
-  void setMajor();
+  string getMajor();
+  void setMajor(string major);
 
-  double getGPA(double gpa);
-  void setGPA();
+  double getGPA();
+  void setGPA(double gpa);
 
-  int getAdvisor(int advisor);
-  void setAdvisor();
+  int getAdvisor();
+  void setAdvisor(int advisor);
 
 private:
-  //string name;
-  //string level;
-  //int id;
+  string name1;
+  string level1;
+  int id1;
 
-  string major;
-  double gpa;
-  int advisor;
+  string major1;
+  double gpa1;
+  int advisor1;
 
 };
