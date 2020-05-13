@@ -2,8 +2,8 @@
 #include "Faculty.h"
 
 Menu::Menu(){
-  bool validAnswer = true;
-  int input = 0;
+   validAnswer = true;
+   input = 0;
 
   name = " ";
   level = " ";
@@ -112,7 +112,6 @@ void Menu::MenuError(){
 }
 
 void Menu::MenuPrint(){
-
   cout << "1. Print all students and their information (sorted by ascending id #)" << endl;
   cout << "2. Print all faculty and their information (sorted by ascending id #)" << endl;
   cout << "3. Find and display student information given the students id" << endl;
@@ -131,7 +130,13 @@ void Menu::MenuPrint(){
   while (validAnswer) {
 
     cin >> input;
-
+    if(cin.fail()){
+      break;
+        cin.clear();
+        Menu *m = new Menu();
+        m->MenuPrint();
+        delete m;
+    }
     switch (input) {
     case 1 :
     cout << "Print all students and their information (sorted by ascending id #)" << endl;
